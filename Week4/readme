@@ -206,3 +206,105 @@ void reverse()
 	i--;
 	}
 }
+void sorting()
+{
+	struct node *p1,*p2;
+	p1=head;
+	int c=0,i,t;
+	while(p1!=NULL)
+	{
+		c++;
+		p1=p1->link;
+	}
+	for(i=0;i<c;i++)
+	{	p2=head;
+		while(p2->link!=NULL)
+		{
+			if(p2->data>p2->link->data)
+			{
+				t=p2->data;
+				p2->data=p2->link->data;
+				p2->link->data=t;
+			}
+			p2=p2->link;
+		}
+	}
+}
+void search_for_element()
+{
+	int value,flag=0,c=0;
+	printf("Enter value to be searched\n:");
+	scanf("%d",&value);
+	next=head;
+	while(next!=NULL)
+	{
+		if(next->data==value)
+		{
+			flag=1;
+			break;
+		}
+		next=next->link;
+		c++;
+	}
+	if(flag==1)
+	{
+		printf("Element present in the list at %d position\n",c);
+	}
+	else
+		printf("Element not present in the list\n");
+}
+
+	
+int main()
+{
+	int ch;
+	while(1)
+	{
+		printf("Program for single linked list\n");
+		printf("**************************\n");
+		printf("1-create\n2-insert at begin\n3-insert at position\n4-insert at end\n5-insert before");
+		printf("\n6-insert after\n7-delete at begin\n8-delete at end\n9-delete at pos\n10-delete before\n");
+		printf("11-delete after\n12-traversal\n13-display in reverse\n14-search\n15-sort\n16-display\n");
+		printf("**************************\n");
+		printf("Enter your choice\n");
+		scanf("%d",&ch);
+		switch(ch)
+		{
+			case 1: create();
+				break;
+			case 2:insert_at_begin();
+				break;
+			case 3:insert_at_position();
+				break;
+
+			case 4:insert_at_end();
+				break;
+			case 5:insert_before_node();
+				break;
+			case 6:insert_after_node();
+				break;
+			case 7:delete_at_begin();
+				break;
+			case 8:delete_at_end();
+				break;
+			case 9:delete_at_position();
+				break;
+			case 10:delete_before_node();
+				break;
+			case 11:delete_after_node();
+				break;
+			case 12:traversal();
+				break;
+			case 13:reverse();
+				break;
+			case 14:search_for_element();
+				break;
+			case 15:sorting();
+				break;
+			case 16:display();
+				break;
+			case 17:exit(0);
+				break;
+		}
+	}
+}
