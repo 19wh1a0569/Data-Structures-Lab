@@ -1,0 +1,815 @@
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+struct node
+{
+	int data;
+	struct node*link;
+};
+struct node*f=NULL,*r=NULL,*cur;
+
+void enqueue()
+{
+	cur=(struct node*)malloc(sizeof(struct node));
+	printf("Enter data to insert\n");
+	scanf("%d",&cur->data);
+	
+	if(f==NULL)
+	{
+		cur->link=cur;
+		f=r=cur;
+	}	
+	else
+	{
+		r->link=cur;
+		cur->link=f;
+		r=cur;
+	}
+	
+}
+
+
+void dequeue()
+{
+	if(f==NULL)
+	printf("circular queue underflow\n");
+	else if(f==r)
+	{
+		printf("deleted data is %d\n",f->data);
+		f=r=NULL;
+	}
+	else
+	{
+		cur=f;
+		f=f->link;
+		r->link=f;
+		printf("deleted data %d\n",cur->data);
+		free(cur);
+	}
+}
+
+void display()
+{
+	if(f==NULL)
+	printf("circular Queue is empty\n");
+	else
+	{
+		cur=f;
+		while(cur->link!=f)
+		{
+			printf("%d->",cur->data);
+			cur=cur->link;
+		}
+		printf("%d->",cur->data);
+	}
+}
+
+int main()
+{
+	int ch;
+	while(1)
+	{
+		printf("Program for cqueue using sll\n");
+		printf("\n1-enqueue\n2-dequeue\n3-display\n4-exit\n");
+		printf("Enter your choice\n");
+		scanf("%d",&ch);
+		switch(ch)
+		{
+		case 1: enqueue();
+				break;
+		case 2: dequeue();
+				break;
+		case 3: display();
+				break;
+		case 4: exit(0);
+				
+		}
+	}
+}
+output:
+C:\TDM-GCC-64\dslab>cq_sll
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+1
+Enter data to insert
+20
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+1
+Enter data to insert
+30
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+1
+Enter data to insert
+10
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+1
+Enter data to insert
+50
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+2
+deleted data 20
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+3
+30->10->50->Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+2
+deleted data 30
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+2
+deleted data 10
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+2
+deleted data is 50
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+2
+circular queue underflow
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+3
+circular Queue is empty
+Program for cqueue using sll
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+4
+
+C:\TDM-GCC-64\dslab>
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+struct node
+{
+	int data;
+	struct node*link;
+};
+struct node*f=NULL,*r=NULL,*cur;
+
+void enqueue()
+{
+	cur=(struct node*)malloc(sizeof(struct node));
+	printf("Enter data to insert\n");
+	scanf("%d",&cur->data);
+	
+	if(f==NULL)
+	{
+		cur->link=cur;
+		f=r=cur;
+	}	
+	else
+	{
+		r->link=cur;
+		cur->link=f;
+		r=cur;
+	}
+	
+}
+
+
+void dequeue()
+{
+	if(f==NULL)
+	printf("circular queue underflow\n");
+	else if(f==r)
+	{
+		printf("deleted data is %d\n",f->data);
+		f=r=NULL;
+	}
+	else
+	{
+		cur=f;
+		f=f->link;
+		r->link=f;
+		printf("deleted data %d\n",cur->data);
+		free(cur);
+	}
+}
+
+void display()
+{
+	if(f==NULL)
+	printf("circular Queue is empty\n");
+	else
+	{
+		cur=f;
+		while(cur->link!=f)
+		{
+			printf("%d->",cur->data);
+			cur=cur->link;
+		}
+		printf("%d->",cur->data);
+	}
+}
+
+int main()
+{
+	int ch;
+	while(1)
+	{
+		printf("Program for cqueue using sll\n");
+		printf("\n1-enqueue\n2-dequeue\n3-display\n4-exit\n");
+		printf("Enter your choice\n");
+		scanf("%d",&ch);
+		switch(ch)
+		{
+		case 1: enqueue();
+				break;
+		case 2: dequeue();
+				break;
+		case 3: display();
+				break;
+		case 4: exit(0);
+				
+		}
+	}
+}
+output:
+C:\TDM-GCC-64\dslab>cq_sll
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+1
+Enter data to insert
+20
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+1
+Enter data to insert
+30
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+1
+Enter data to insert
+10
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+1
+Enter data to insert
+50
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+2
+deleted data 20
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+3
+30->10->50->Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+2
+deleted data 30
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+2
+deleted data 10
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+2
+deleted data is 50
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+2
+circular queue underflow
+Program for cqueue using sll
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+3
+circular Queue is empty
+Program for cqueue using sll
+1-enqueue
+2-dequeue
+3-display
+4-exit
+Enter your choice
+4
+
+C:\TDM-GCC-64\dslab>
+
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#define maxsize 5
+int f=-1,r=-1,queue[maxsize];
+int isfull()
+{
+	if(r==maxsize-1)
+	return 1;
+	else
+	return 0;
+}
+int isempty()
+{
+	if(f==-1)
+	return 1;
+	else
+	return 0;
+ }
+void enqueue(int data)
+{
+	if(f==-1)
+		f=0;
+	queue[++r]=data;
+}
+int dequeue()
+{
+	int x=queue[f];
+	if(f==r)
+		f=r=-1;
+	else
+		f++;
+	return x;
+}
+void display()
+{
+	int i;
+	for( i=f;i<=r;i++)
+		printf("%d\t",queue[i]);
+}
+int main()
+{
+	int ch,x;
+	while(1)
+	{
+	printf("\n1-enqueue\n2-dequeue\n3-display\n4-exit\n");
+	printf("enter your choice\n");
+	scanf("%d",&ch);
+	switch(ch)
+	{
+	case 1: if(isfull())
+		printf("queue overflow\n");
+		else
+		{
+			printf("enter data to insert\n");
+			scanf("%d",&x);
+			enqueue(x);
+		}
+		break;
+	case 2: if(isempty())
+		printf("queue underflow\n");
+		else
+		{
+			printf("deleted element %d\n",dequeue());
+			if(f==r)
+			f=r=-1;
+		}
+		break;
+	case 3 :display();
+		break;
+	case 4 :exit(0);
+		break;
+	}
+	}
+}
+output:
+
+Setting up environment for using MinGW with GCC from C:\TDM-GCC-64\.
+
+C:\TDM-GCC-64>cd dslab
+
+C:\TDM-GCC-64\dslab>gcc queue_array.c -o queue_array
+
+C:\TDM-GCC-64\dslab>queue_array
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+1
+enter data to insert
+3
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+1
+enter data to insert
+6
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+1
+enter data to insert
+9
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+1
+enter data to insert
+8
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+3
+3       6       9       8
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+2
+deleted element 3
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+1
+enter data to insert
+6
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+1
+queue overflow
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+2
+deleted element 6
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+2
+deleted element 9
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+2
+deleted element 8
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+2
+queue underflow
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+3
+0
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+4
+
+C:\TDM-GCC-64\dslab>
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#define maxsize 5
+int f=-1,r=-1,queue[maxsize];
+int isfull()
+{
+	if(r==maxsize-1)
+	return 1;
+	else
+	return 0;
+}
+int isempty()
+{
+	if(f==-1)
+	return 1;
+	else
+	return 0;
+ }
+void enqueue(int data)
+{
+	if(f==-1)
+		f=0;
+	queue[++r]=data;
+}
+int dequeue()
+{
+	int x=queue[f];
+	if(f==r)
+		f=r=-1;
+	else
+		f++;
+	return x;
+}
+void display()
+{
+	int i;
+	for( i=f;i<=r;i++)
+		printf("%d\t",queue[i]);
+}
+int main()
+{
+	int ch,x;
+	while(1)
+	{
+	printf("\n1-enqueue\n2-dequeue\n3-display\n4-exit\n");
+	printf("enter your choice\n");
+	scanf("%d",&ch);
+	switch(ch)
+	{
+	case 1: if(isfull())
+		printf("queue overflow\n");
+		else
+		{
+			printf("enter data to insert\n");
+			scanf("%d",&x);
+			enqueue(x);
+		}
+		break;
+	case 2: if(isempty())
+		printf("queue underflow\n");
+		else
+		{
+			printf("deleted element %d\n",dequeue());
+			if(f==r)
+			f=r=-1;
+		}
+		break;
+	case 3 :display();
+		break;
+	case 4 :exit(0);
+		break;
+	}
+	}
+}
+output:
+
+Setting up environment for using MinGW with GCC from C:\TDM-GCC-64\.
+
+C:\TDM-GCC-64>cd dslab
+
+C:\TDM-GCC-64\dslab>gcc queue_array.c -o queue_array
+
+C:\TDM-GCC-64\dslab>queue_array
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+1
+enter data to insert
+3
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+1
+enter data to insert
+6
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+1
+enter data to insert
+9
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+1
+enter data to insert
+8
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+3
+3       6       9       8
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+2
+deleted element 3
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+1
+enter data to insert
+6
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+1
+queue overflow
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+2
+deleted element 6
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+2
+deleted element 9
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+2
+deleted element 8
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+2
+queue underflow
+
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+3
+0
+1-enqueue
+2-dequeue
+3-display
+4-exit
+enter your choice
+4
+
+C:\TDM-GCC-64\dslab>
